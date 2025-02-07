@@ -21,7 +21,6 @@
 
     header, footer {
       text-align: center;
-      margin-top: 30px;
       padding: 20px;
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(4px);
@@ -48,6 +47,24 @@
       font-weight: bold;
       color: #ffec65;
     }
+
+    .jubilee a {
+  color: inherit;       /* берёт цвет у родителя (т.е. #ffec65) */
+  text-decoration: none;/* убираем подчеркивание */
+}
+
+.jubilee a:hover {
+  text-decoration: underline; /* При наведении подчеркиваем */
+}
+
+.jubilee-image-wrapper {
+  margin-top: 10px; /* например, немного отодвигаем вниз */
+}
+.jubilee-image-wrapper img {
+  max-width: 200px; /* задайте на ваше усмотрение */
+  display: block;
+  margin: 0 auto;
+}
 
     main {
       width: 100%;
@@ -139,6 +156,7 @@
 </header>
 
 <main>
+
   <section class="intro">
     <p>
       Двухщелевой эксперимент — это один из самых удивительных и загадочных экспериментов
@@ -192,6 +210,9 @@
         равно возникает рисунок из чередующихся светлых и тёмных полос, будто каждая
         частица «проходит через обе щели одновременно» или взаимодействует сама с собой.
       </p>
+
+        <hr style="margin: 20px 0; border: none; border-top: 2px solid rgba(255,255,255,0.2);" />
+
       <p>
         Так квантовая механика научила нас, что мир микрочастиц живёт по своим,
         странным, но восхитительным законам.
@@ -201,7 +222,15 @@
 </main>
 
 <footer>
-  <div class="jubilee">Посвящено 100-летию квантовой механики</div>
+  <div class="jubilee">
+  <a href="https://quantum2025.org/" target="_blank" rel="noopener noreferrer">
+    Посвящено 100-летию квантовой механики
+  </a>
+  <div class="jubilee-image-wrapper">
+      <a href="https://quantum2025.org/" target="_blank" rel="noopener noreferrer">
+          <img src="image4.webp" alt="IYQ2025" />
+  </div>
+</div>
 </footer>
 
 <script>
