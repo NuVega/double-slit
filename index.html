@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Двухщелевой эксперимент</title>
+  <style>
+    /* Сброс стилей */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #444);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    header, footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      color: #ffec65;
+      margin-bottom: 10px;
+    }
+    header h2 {
+      font-size: 1rem;
+      color: #fff;
+      opacity: 0.7;
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #dddddd;
+    }
+    .jubilee {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: bold;
+      color: #ffec65;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Короткое вводное описание */
+      .intro {
+      margin-bottom: 50px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .intro p {
+      margin: 30px 0;
+      font-size: 1.1rem;
+    }
+
+    /* Оформление "слайдера" */
+    .steps-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .slide {
+      display: none; /* по умолчанию скрыто */
+      transition: opacity 0.3s ease-in-out;
+      text-align: center;
+    }
+    .slide.active {
+      display: block; /* показываем только активный */
+    }
+    .slide h3 {
+      font-size: 1.6rem;
+      color: #ffec65;
+      margin-bottom: 10px;
+    }
+    .slide img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border: 2px solid #ffec65;
+      border-radius: 8px;
+    }
+    .slide p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    /* Кнопки-навигация (стрелки) */
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ffec65;
+      color: #333;
+      border: none;
+      font-size: 1.5rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.3s;
+      border-radius: 50%;
+    }
+    .arrow-button:hover {
+      opacity: 1;
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Двухщелевой эксперимент</h1>
+  <h2>Наблюдение меняет реальность!</h2>
+</header>
+
+<main>
+  <section class="intro">
+    <p>
+      Двухщелевой эксперимент — это один из самых удивительных и загадочных экспериментов
+      в квантовой механике. Он показал, что частицы могут вести себя как волны,
+      а сама реальность может зависеть от наблюдателя!
+    </p>
+  </section>
+
+  <!-- Контейнер для "карточек" (3 шага) -->
+  <div class="steps-container">
+    <!-- Левая стрелка -->
+    <button class="arrow-button arrow-left" id="arrowLeft">&#9664;</button>
+    <!-- Правая стрелка -->
+    <button class="arrow-button arrow-right" id="arrowRight">&#9654;</button>
+
+    <!-- Слайд 1: "Ожидание" -->
+    <div class="slide active" id="slide1">
+      <h3>1️⃣ Ожидание: если бы электроны были шариками</h3>
+      <img src="image1.jpg" alt="Ожидание: два пятна" />
+      <p>
+        Если бы электроны были просто маленькими шариками, мы бы увидели лишь
+        два пятна напротив щелей — никаких волн, никакой магии.
+      </p>
+    </div>
+
+    <!-- Слайд 2: "Реальность" -->
+    <div class="slide" id="slide2">
+      <h3>2️⃣ Реальность: электроны ведут себя как волны</h3>
+      <img src="image2.jpg" alt="Реальность: интерференционная картина" />
+      <p>
+        Когда электроны летят через две щели, они образуют полосатый
+        интерференционный узор на экране, как настоящие волны!
+      </p>
+    </div>
+
+    <!-- Слайд 3: "Самое странное" -->
+    <div class="slide" id="slide3">
+      <h3>3️⃣ Самое странное: наблюдение меняет реальность!</h3>
+      <img src="image3.jpg" alt="Наблюдение меняет реальность" />
+      <p>
+        Если же мы установим прибор для слежения за электронами, они перестают
+        образовывать волны и ведут себя как шарики. Факт наблюдения
+        «заставляет» их изменить своё поведение!
+      </p>
+    </div>
+  </div>
+
+    <section class="intro">
+      <p>
+        Самое удивительное в том, что даже если пропускать частицы по одной, всё
+        равно возникает рисунок из чередующихся светлых и тёмных полос, будто каждая
+        частица «проходит через обе щели одновременно» или взаимодействует сама с собой.
+      </p>
+      <p>
+        Так квантовая механика научила нас, что мир микрочастиц живёт по своим,
+        странным, но восхитительным законам.
+      </p>
+    </section>
+
+</main>
+
+<footer>
+  <div class="jubilee">Посвящено 100-летию квантовой механики</div>
+</footer>
+
+<script>
+  // Простейшая логика переключения слайдов
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  const arrowLeft = document.getElementById("arrowLeft");
+  const arrowRight = document.getElementById("arrowRight");
+
+  function showSlide(index) {
+    // Прячем все слайды
+    slides.forEach(slide => slide.classList.remove("active"));
+    // Показываем нужный
+    slides[index].classList.add("active");
+  }
+
+  arrowLeft.addEventListener("click", () => {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1; // зацикливание, если нужно
+    }
+    showSlide(currentSlide);
+  });
+
+  arrowRight.addEventListener("click", () => {
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+      currentSlide = 0; // зацикливание, если нужно
+    }
+    showSlide(currentSlide);
+  });
+</script>
+
+</body>
+</html>
